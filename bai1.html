@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let arr = [];
+    let n = 0;
+    let temp = 0;
+    let sumEven = 0;
+    let sumOdd = 0;
+    let result = 0;
+    do {
+        n = +prompt('Vui long nhap so luong phan tu cua mang')
+    } while (n<=0 || n>20 || isNaN(n));
+    for (let i=0 ; i<n; i++){
+        do {temp = +prompt('Vui long them phan tu so nguyen vao mang')}
+        while (isNaN(temp) || temp<0 || Math.floor(n) !== n);
+        arr.push(temp)
+    }
+    console.log(arr);
+    for(let i=0; i<arr.length; i++){
+        if(arr[i]%2 === 0){
+            sumEven += arr[i]
+        } else {
+            sumOdd += arr[i]
+        }
+    }
+    result = sumEven - sumOdd;
+    console.log(result)
+</script>
+</body>
+</html>

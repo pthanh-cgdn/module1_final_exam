@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function checkPrime(number){
+        if (number < 2){
+            return false
+        } else {
+            for (let i=2 ; i<number ; i++){
+                if (number%i === 0){
+                    return false
+                }
+            }
+        }
+        return true
+    }
+    function sortByValue(arr){
+        let i = 0;
+        let temp = 0;
+        while (i < arr.length-1) {
+            if (arr[i] > arr[i + 1]) {
+                temp = arr[i];
+                arr[i] = arr[i + 1];
+                arr[i + 1] = temp;
+                i = 0
+            } else {
+                i++
+            }
+        }
+        return arr
+    }
+    function findNumberPrime(arr){
+        let newArr = [];
+        let temp = 0;
+        let j = 0;
+        for (let i=0; i<arr.length ; i++){
+            if(checkPrime(arr[i])){
+                    newArr.push(arr[i])
+            }
+        }
+        return sortByValue(newArr)
+    }
+    console.log(findNumberPrime([1,5,6,23,8,47,10,3, 2, 14]))
+</script>
+</body>
+</html>
